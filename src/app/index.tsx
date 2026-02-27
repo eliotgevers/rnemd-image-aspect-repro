@@ -1,5 +1,4 @@
 import { Linking, ScrollView, StyleSheet, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { EnrichedMarkdownText } from 'react-native-enriched-markdown';
 
 const MARKDOWN = `
@@ -22,7 +21,7 @@ This screen uses \`EnrichedMarkdownText\` directly with default configuration.
 
 export default function Index() {
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.card}>
           <EnrichedMarkdownText
@@ -33,12 +32,12 @@ export default function Index() {
           />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  safeArea: {
+  container: {
     flex: 1,
   },
   content: {
